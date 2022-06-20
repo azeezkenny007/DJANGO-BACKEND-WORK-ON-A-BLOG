@@ -1,0 +1,55 @@
+{% extends 'account/base.html' %}
+{% block content %}
+{% load static %}
+<body class="body">
+
+	<div class="sign section--bg" data-bg="img/section/section.jpg">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="sign__content">
+						<!-- registration form -->
+						<form action="#" class="sign__form" method="POST" action="#">
+							{% csrf_token %}
+							<a href="index.html" class="sign__logo">
+								<img src="img/logo.svg" alt="">
+							</a>
+                             <h3 style="color:white;"> {{form.username.label}}</h3>
+							<div class="sign__group">
+								{{form.username}}
+							</div>
+                               <h3 style="color:white;"> {{form.email.label}}</h3>
+							<div class="sign__group">
+								{{form.email}}
+							</div>
+                                <h3 style="color:white;"> {{form.password1.label}}</h3>
+							<div class="sign__group">
+								{{form.password1}}
+							</div>
+							<h3 style="color:white;"> {{form.password2.label}}</h3>
+							<div class="sign__group">
+								{{form.password2}}
+							</div>
+
+							<div class="sign__group sign__group--checkbox">
+								<input id="remember" name="remember" type="checkbox" checked="checked">
+								<label for="remember">I agree to the <a href="#">Privacy Policy</a></label>
+							</div>
+							<h3 style="color:white;">{{form.errors}}</h3>
+
+							<button class="sign__btn" type="submit">Sign up</button>
+
+							<span class="sign__text">Already have an account? <a href="signin.html">Sign in!</a></span>
+						</form>
+						<!-- registration form -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- JS -->
+
+</body>
+
+{% endblock %}

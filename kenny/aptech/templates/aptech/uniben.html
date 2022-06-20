@@ -1,0 +1,12 @@
+{% extends 'aptech/base.html' %}
+{% block content %}
+{% load static %}
+{% load humanize %}
+<form method="POST">
+    <input type="submit" name="submit">
+    {{form.title}}
+    {{form.body}}
+    {{form.references}}
+    {{form.date_created}}|naturaltime
+</form>
+{% endblock %}
